@@ -5,17 +5,10 @@ window.addEventListener('load', () => {
     changeTitle.textContent = 'Fun Bus Travel Agency - Not The Solution'
 })
 
-//2
-const logoHeaderClick = document.querySelector('.logo-heading');
+//2 Separate these functions for stopPropgation
 const backgroundChange = document.querySelector('body');
-backgroundChange.addEventListener('click', (event) => {
+backgroundChange.addEventListener('click', () => {
     backgroundChange.style.background = 'blue';
-    
-    logoHeaderClick.addEventListener('click', () => {
-        console.log('Fired');
-        logoHeaderClick.style.background = 'blue';
-        logoHeaderClick.stopPropogation();
-    })
 })
 
 //3
@@ -71,8 +64,8 @@ document.addEventListener('keydown', (element) => {
 })
 
 //10
-// const logoHeaderClick = document.querySelector('.logo-heading');
-// logoHeaderClick.addEventListener('click', (event) => {
-//     event.style.background = 'blue';
-//     event.stopPropogation();
-// })
+const logoHeaderClick = document.querySelector('.logo-heading');
+logoHeaderClick.addEventListener('click', (event) => {
+    logoHeaderClick.style.background = 'blue';
+    event.stopPropagation();
+})
